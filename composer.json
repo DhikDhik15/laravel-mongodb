@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "jenssegers/mongodb": "3.8.x",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0"
     },
@@ -57,5 +58,8 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "provide" : {
+        "ext-mongodb": "*"
     }
 }
