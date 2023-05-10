@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Jenssegers\Mongodb\Eloquent\Model;
 
-class MotorCycleModel extends Eloquent
+class MotorCycleModel extends Model
 {
-    use HasFactory;
+    protected $collection = 'motors';
+    protected $connection = 'mongodb';
+    protected $primaryKey = 'id';
+
+    public function vehicle()
+    {
+        return $this->belongsTo(VehicleMode::class);
+    }
 }

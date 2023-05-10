@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\VehicleResource;
 use App\Repositories\VehicleRepository;
 
 class VehicleController extends Controller
@@ -66,7 +67,11 @@ class VehicleController extends Controller
     public function getVehicle()
     {
         try {
-            $data = $this->vehicle->getVehicle();
+            $data = VehicleResource::collection($this->vehicle->getVehicle());
+            return response()->json([
+                'status' => 200,
+                'message' => $data
+            ]);
         } catch (\Throwable $th) {
             //throw $th;
         }

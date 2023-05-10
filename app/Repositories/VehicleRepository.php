@@ -60,8 +60,7 @@ class VehicleRepository
     public function getVehicle()
     {
 
-        $collection = VehicleModel::all();dd($collection);
-
+        return $collection = VehicleModel::get();
 
     }
 }
