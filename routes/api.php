@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\MotorCycleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('me', 'me');
 
 });
+
+Route::post('/store-motor',[MotorCycleController::class, 'store']);
+Route::post('/store-vehicle', [VehicleController::class, 'store']);
