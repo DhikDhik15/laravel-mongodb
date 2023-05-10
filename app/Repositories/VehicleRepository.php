@@ -56,4 +56,12 @@ class VehicleRepository
         }
 
     }
+
+    public function getVehicle()
+    {
+
+        $collection = VehicleModel::all();dd($collection);
+
+
+    }
 }

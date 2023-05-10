@@ -63,6 +63,15 @@ class VehicleController extends Controller
         //
     }
 
+    public function getVehicle()
+    {
+        try {
+            $data = $this->vehicle->getVehicle();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

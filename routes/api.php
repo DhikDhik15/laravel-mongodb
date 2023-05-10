@@ -32,3 +32,4 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::post('/store-motor',[MotorCycleController::class, 'store']);
 Route::post('/store-vehicle', [VehicleController::class, 'store']);
+Route::get('/get-vehicle', [VehicleController::class, 'getVehicle']);
