@@ -43,8 +43,12 @@ class VehicleController extends Controller
     {
         try {
             $data = $this->vehicle->store($request->all());
+            return response()->json([
+                'status' => 200,
+                'messages' => 'success'
+            ]);
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 

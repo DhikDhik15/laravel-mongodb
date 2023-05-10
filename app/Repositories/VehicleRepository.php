@@ -32,6 +32,8 @@ class VehicleRepository
                 'type_transmision' => $data['type_transmision']
             ]);
 
+            return $vehicle;
+
         } else {
             $collection_vehicle = (new Client)->sales->vehicles;
 
@@ -49,9 +51,9 @@ class VehicleRepository
                 'count_passengers' => $data['count_passengers'],
                 'car_type' => $data['car_type']
             ]);
+
+            return $vehicle;
         }
-
-
 
     }
 }
