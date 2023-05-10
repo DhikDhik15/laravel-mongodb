@@ -50,15 +50,17 @@ class AuthController extends Controller
             'password' => 'required|string|min:6',
         ]);
 
+        $user = $request->all();
+
         $collection = (new Client)->sales->users;
 
-        $user = $collection->insertOne([
+        $register = $collection->insertOne([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        $token = Auth::login($user);
+        $token = Auth::login($user); //can not create token
         return response()->json([
             'status' => 'success',
             'message' => 'User created successfully',

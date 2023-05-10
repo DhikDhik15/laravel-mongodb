@@ -15,7 +15,8 @@
         "jenssegers/mongodb": "3.8.x",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "php-open-source-saver/jwt-auth": "^2.1"
+        "php-open-source-saver/jwt-auth": "^2.1",
+        "tymon/jwt-auth": "1.x"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
