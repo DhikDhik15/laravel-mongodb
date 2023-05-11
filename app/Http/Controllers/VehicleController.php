@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\VehicleResource;
 use App\Repositories\VehicleRepository;
+use App\Http\Resources\VehicleResourceDetail;
 
 class VehicleController extends Controller
 {
@@ -68,6 +69,19 @@ class VehicleController extends Controller
     {
         try {
             $data = VehicleResource::collection($this->vehicle->getVehicle());
+            return response()->json([
+                'status' => 200,
+                'message' => $data
+            ]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
+    public function getVehicleId($_id)
+    {
+        try {
+            $data = VehicleResourceDetail::collection($this->vehicle->getVehicleById($_id));
             return response()->json([
                 'status' => 200,
                 'message' => $data
