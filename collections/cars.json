@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "645c42e11b610000bf001721"
+  },
+  "vehicle_id": 376,
+  "car_machine": "15000cc",
+  "count_passengers": "8",
+  "car_type": "sport",
+  "updated_at": {
+    "$date": "2023-05-11T01:20:33.861Z"
+  },
+  "created_at": {
+    "$date": "2023-05-11T01:20:33.861Z"
+  }
+}]

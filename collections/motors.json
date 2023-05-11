@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "645c42d41b610000bf00171f"
+  },
+  "vehicle_id": 961,
+  "motor_machine": "1000CC",
+  "suspension_type": "pegas",
+  "type_transmision": "manual",
+  "updated_at": {
+    "$date": "2023-05-11T01:20:20.379Z"
+  },
+  "created_at": {
+    "$date": "2023-05-11T01:20:20.379Z"
+  }
+}]
