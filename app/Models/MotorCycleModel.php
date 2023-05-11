@@ -8,7 +8,7 @@ class MotorCycleModel extends Model
 {
     protected $collection = 'motors';
     protected $connection = 'mongodb';
-    protected $primaryKey = 'id';
+    protected $guarded = [];
 
     public function vehicle()
     {

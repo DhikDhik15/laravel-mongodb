@@ -11,8 +11,7 @@ class VehicleModel extends Model
 {
     protected $database = 'mongodb';
     protected $collection = 'vehicles';
-    protected $primaryKey = 'id';
-
+    protected $guarded = [];
 
     public function car()
     {
