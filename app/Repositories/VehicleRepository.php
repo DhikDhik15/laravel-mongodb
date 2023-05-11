@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use MongoDB\Client;
+use App\Models\CarModel;
 use App\Models\VehicleModel;
+use App\Models\MotorCycleModel;
 
 
 class VehicleRepository
@@ -15,18 +17,17 @@ class VehicleRepository
     public function store(array $data)
     {
         if ($data['vehicle_type'] == 1) {
-            $collection_vehicle = (new Client)->sales->vehicles;
 
-            $vehicle = $collection_vehicle->insertOne([
+            $vehicle = VehicleModel::create([
+                'ID' => random_int(0, 999),
                 'year' => $data['year'],
                 'color' => $data['color'],
                 'price' => $data['price'],
                 'vehicle_type' => $data['vehicle_type']
             ]);
 
-            $collection_motor = (new Client)->sales->motors;
-            $motor = $collection_motor->insertOne([
-                'vehicle_id' => $vehicle->getInsertedId(),
+            $motor = MotorCycleModel::create([
+                'vehicle_id' => $vehicle->ID,
                 'motor_machine' => $data['motor_machine'],
                 'suspension_type' => $data['suspension_type'],
                 'type_transmision' => $data['type_transmision']
@@ -35,18 +36,17 @@ class VehicleRepository
             return $vehicle;
 
         } else {
-            $collection_vehicle = (new Client)->sales->vehicles;
 
-            $vehicle = $collection_vehicle->insertOne([
+            $vehicle = VehicleModel::create([
+                'ID' => random_int(0, 999),
                 'year' => $data['year'],
                 'color' => $data['color'],
                 'price' => $data['price'],
                 'vehicle_type' => $data['vehicle_type']
             ]);
 
-            $collection_car = (new Client)->sales->cars;
-            $motor = $collection_car->insertOne([
-                'vehicle_id' => $vehicle->getInsertedId(),
+            $car = CarModel::create([
+                'vehicle_id' => $vehicle->ID,
                 'car_machine' => $data['car_machine'],
                 'count_passengers' => $data['count_passengers'],
                 'car_type' => $data['car_type']
@@ -59,8 +59,11 @@ class VehicleRepository
 
     public function getVehicle()
     {
-
         return $collection = VehicleModel::get();
+    }
 
+    public function getVehicleById(string $_id)
+    {
+        return $collection = VehicleModel::where('_id',$_id)->get();
     }
 }
