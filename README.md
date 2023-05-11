@@ -24,4 +24,4 @@ Panduan installasi sebagai berikut :
 ## Collection Mongo
 
 Nama database : sales
-- Export collection yang ada pada folder [collections]
+- Export collection yang ada pada folder [collections], ke aplikasi mongo db tools seperti : Mongo Atlas
