@@ -16,6 +16,9 @@ class VehicleController extends Controller
      */
     protected $vehicle;
 
+    /**
+     * DECLARE REPOSITORY
+    */
     public function __construct(VehicleRepository $vehicle)
     {
         $this->vehicle = $vehicle;
@@ -65,6 +68,9 @@ class VehicleController extends Controller
         //
     }
 
+    /**
+     * GET ALL DATA VEHICLE
+    */
     public function getVehicle()
     {
         try {
@@ -74,10 +80,13 @@ class VehicleController extends Controller
                 'message' => $data
             ]);
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 
+    /**
+     * GET DATA VEHICLE WITH PARAMS
+    */
     public function getVehicleId($_id)
     {
         try {
@@ -87,7 +96,7 @@ class VehicleController extends Controller
                 'message' => $data
             ]);
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 

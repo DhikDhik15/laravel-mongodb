@@ -21,15 +21,21 @@ class VehicleResource extends JsonResource
             'year' => $this->year,
             'color' => $this->color,
             'price' => $this->price,
-            'type' => $this->vehicle_type == 1 ? $this->motor($this->ID) : $this->car($this->ID)
+            'type' => $this->vehicle_type == 1 ? $this->motor($this->ID) : $this->car($this->ID) //CHECK CONDITION vehicle_type
         ];
     }
 
+    /**
+     * GET DATA FROM COLLECTION MOTORS
+    */
     public function motor($motor)
     {
         return $a = MotorCycleModel::where('vehicle_id',$motor)->first();
     }
 
+    /**
+     * GET DATA FROM COLLECTION CARS
+    */
     public function car($car)
     {
         return $b = CarModel::where('vehicle_id', $car)->first();

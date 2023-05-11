@@ -27,7 +27,7 @@ class VehicleRepository
             ]);
 
             $motor = MotorCycleModel::create([
-                'vehicle_id' => $vehicle->ID,
+                'vehicle_id' => $vehicle->ID, //get ID vehicle after insert vehicle
                 'motor_machine' => $data['motor_machine'],
                 'suspension_type' => $data['suspension_type'],
                 'type_transmision' => $data['type_transmision']
@@ -46,7 +46,7 @@ class VehicleRepository
             ]);
 
             $car = CarModel::create([
-                'vehicle_id' => $vehicle->ID,
+                'vehicle_id' => $vehicle->ID, //get ID vehicle after insert vehicle
                 'car_machine' => $data['car_machine'],
                 'count_passengers' => $data['count_passengers'],
                 'car_type' => $data['car_type']
@@ -57,11 +57,17 @@ class VehicleRepository
 
     }
 
+    /**
+     * GET ALL DATA VEHICLE
+    */
     public function getVehicle()
     {
         return $collection = VehicleModel::get();
     }
 
+    /**
+     * GET ALL DATA VEHICLE WITH PARAMS ID
+    */
     public function getVehicleById(string $_id)
     {
         return $collection = VehicleModel::where('_id',$_id)->get();
