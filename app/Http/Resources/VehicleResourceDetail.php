@@ -6,7 +6,7 @@ use App\Models\CarModel;
 use App\Models\MotorCycleModel;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class VehicleResource extends JsonResource
+class VehicleResourceDetail extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,7 +16,7 @@ class VehicleResource extends JsonResource
      */
     public function toArray($request)
     {
-        return[
+        return [
             'id' => $this->_id,
             'year' => $this->year,
             'color' => $this->color,
@@ -34,4 +34,5 @@ class VehicleResource extends JsonResource
     {
         return $b = CarModel::where('vehicle_id', $car)->first();
     }
+
 }
